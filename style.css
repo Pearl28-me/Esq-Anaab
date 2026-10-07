@@ -1,0 +1,534 @@
+:root {
+--gold: #8a5a10;
+--ink: #2a1a0e;
+--muted: #46331f;
+--serif: 'Bodoni Moda', 'Didot', 'Playfair Display', Georgia, serif;
+--body: 'Cormorant Garamond', Georgia, serif;
+box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+background: #b9a487;
+color: var(--ink);
+font-family: var(--body);
+overflow-x: hidden;
+}
+
+/* =========================
+BACKGROUND PHOTO
+========================= */
+
+.photo {
+position: fixed;
+inset: 0;
+z-index: -2;
+
+background-image:
+linear-gradient(
+rgba(20, 14, 10, 0.12),
+rgba(20, 14, 10, 0.35)
+),
+url("images/Tavy.jpg");
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+/* =========================
+LANDSCAPE / DESKTOP
+========================= */
+
+@media (min-aspect-ratio: 1/1) {
+
+.photo {
+background-position: 73% center;
+}
+
+.hero {
+padding: 0 6vw;
+justify-content: center;
+gap: 4vh;
+}
+
+.title {
+text-align: left;
+}
+
+.title .a {
+font-size: min(14vw, 25vh);
+}
+
+.title .b {
+font-size: min(11vw, 20vh);
+}
+
+.id {
+margin: 0;
+max-width: 520px;
+}
+
+.scroll {
+display: block;
+text-align: left;
+}
+
+.wrap {
+margin: 0 0 0 6vw;
+padding: 0 26px 40px;
+
+background:
+  linear-gradient(
+    90deg,
+    rgba(247, 238, 222, 0.7),
+    rgba(247, 238, 222, 0)
+  );
+
+}
+}
+
+/* =========================
+HERO
+========================= */
+
+.scroll {
+display: none;
+}
+
+.hero {
+position: relative;
+
+min-height: 100vh;
+min-height: 100svh;
+
+display: flex;
+flex-direction: column;
+
+justify-content: flex-start;
+
+gap: 14px;
+
+padding:
+calc(18px + env(safe-area-inset-top, 0px))
+18px
+28px;
+}
+
+/* =========================
+TITLE
+========================= */
+
+.title {
+font-family: var(--serif);
+
+font-weight: 400;
+
+line-height: 0.88;
+
+text-align: center;
+
+text-transform: uppercase;
+
+color: #ffffff;
+text-shadow:
+0 3px 12px rgba(0, 0, 0, 0.85),
+0 1px 3px rgba(0, 0, 0, 0.9);
+
+margin: 0;
+
+opacity: 0;
+
+animation: in 1.4s ease 0.2s forwards;
+}
+
+.title .a {
+display: block;
+
+color: #ffffff;
+
+font-size: min(22vw, 12vh);
+
+letter-spacing: 0.01em;
+}
+
+.title .b {
+display: block;
+
+font-size: min(17vw, 9.5vh);
+
+color: #ffffff;
+
+letter-spacing: 0.01em;
+
+margin-top: 0.04em;
+}
+
+/* =========================
+NAME / ID
+========================= */
+
+.id {
+max-width: 560px;
+
+width: 100%;
+
+margin: 0 auto;
+
+text-align: left;
+
+opacity: 0;
+
+animation: in 1.2s ease 1s forwards;
+}
+
+/* =========================
+GOLD RULE
+========================= */
+
+.rule {
+display: flex;
+
+align-items: center;
+
+gap: 12px;
+
+color: #fff8e8;
+text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+
+font-size: 18px;
+}
+
+.rule:before,
+.rule:after {
+content: "";
+
+flex: 1;
+
+height: 1px;
+
+background: rgba(255, 248, 232, 0.8);
+}
+
+/* =========================
+NAME
+========================= */
+
+.nm {
+font-family: var(--serif);
+
+font-size: clamp(32px, 10vw, 48px);
+
+letter-spacing: 0.12em;
+
+margin: 8px 0 4px;
+
+text-transform: uppercase;
+
+ color: #ffffff;
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.9),
+    0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* =========================
+ROLE
+========================= */
+
+.role {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #fff8e8;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+
+/* =========================
+SCROLL
+========================= */
+
+.scroll {
+text-align: center;
+
+margin-top: 22px;
+
+color: #fff8e8;
+
+font-size: 12px;
+
+letter-spacing: 0.3em;
+
+animation: bob 1.8s ease-in-out infinite;
+}
+
+/* =========================
+CONTENT
+========================= */
+
+.wrap {
+max-width: 560px;
+
+margin: 0 auto;
+
+padding: 0 22px 40px;
+
+background:
+linear-gradient(
+180deg,
+rgba(247, 238, 222, 0),
+rgba(247, 238, 222, 0.82) 12%,
+rgba(247, 238, 222, 0.9)
+);
+}
+
+/* =========================
+SECTIONS
+========================= */
+
+.sec {
+padding: 34px 0;
+
+opacity: 0;
+
+transform: translateY(28px);
+
+transition: all 0.9s ease;
+}
+
+.sec.show {
+opacity: 1;
+
+transform: none;
+}
+
+/* =========================
+HEADING
+========================= */
+
+.hd {
+font-size: clamp(20px, 5.4vw, 26px);
+
+letter-spacing: 0.3em;
+
+text-transform: uppercase;
+
+color: var(--gold);
+
+margin: 0 0 10px;
+}
+
+/* =========================
+BIG TEXT
+========================= */
+
+.big {
+font-size: clamp(21px, 5.6vw, 26px);
+
+line-height: 1.5;
+
+margin: 0;
+}
+
+/* =========================
+DIVIDER
+========================= */
+
+.hr {
+height: 1px;
+
+background: rgba(138, 90, 16, 0.55);
+
+width: 120px;
+
+margin: 0;
+}
+
+/* =========================
+ACHIEVEMENTS
+========================= */
+
+.pt {
+display: flex;
+
+gap: 16px;
+
+margin: 0 0 24px;
+
+text-align: left;
+}
+
+.pt i {
+color: var(--gold);
+
+font-style: normal;
+
+font-size: 28px;
+
+line-height: 1;
+}
+
+.pt h3 {
+margin: 0 0 4px;
+
+font-weight: 400;
+
+font-size: clamp(22px, 6vw, 28px);
+
+letter-spacing: 0.2em;
+
+text-transform: uppercase;
+}
+
+.pt p {
+margin: 0;
+
+font-size: 20px;
+
+line-height: 1.45;
+
+color: var(--muted);
+}
+
+/* =========================
+MESSAGE
+========================= */
+
+.msg {
+background: rgba(255, 250, 240, 0.8);
+
+border: 1px solid rgba(138, 90, 16, 0.45);
+
+padding: 30px 24px;
+
+backdrop-filter: blur(8px);
+
+-webkit-backdrop-filter: blur(8px);
+}
+
+.msg p {
+font-size: 21px;
+
+line-height: 1.65;
+
+color: var(--muted);
+
+margin: 0 0 14px;
+}
+
+.sign {
+font-style: italic;
+
+font-size: 23px;
+
+color: var(--ink);
+
+margin-top: 20px;
+}
+
+/* =========================
+END
+========================= */
+
+.end {
+text-align: center;
+}
+
+.end .f {
+letter-spacing: 0.3em;
+
+text-transform: uppercase;
+
+color: var(--gold);
+
+font-size: clamp(18px, 5vw, 24px);
+}
+
+.end .g {
+letter-spacing: 0.2em;
+
+text-transform: uppercase;
+
+font-size: clamp(11px, 3.1vw, 15px);
+
+margin-top: 12px;
+}
+
+/* =========================
+BUTTON
+========================= */
+
+.btn {
+margin: 26px 0 20px;
+
+padding: 13px 30px;
+
+border: 1px solid var(--gold);
+
+background: transparent;
+
+color: var(--gold);
+
+font-family: inherit;
+
+font-size: 16px;
+
+letter-spacing: 0.25em;
+
+text-transform: uppercase;
+
+cursor: pointer;
+}
+
+.btn:hover {
+background: var(--gold);
+
+color: #fffaf0;
+}
+
+/* =========================
+ANIMATIONS
+========================= */
+
+@keyframes in {
+to {
+opacity: 1;
+}
+}
+
+@keyframes bob {
+50% {
+transform: translateY(7px);
+}
+}
+
+/* =========================
+CONFETTI
+========================= */
+
+.c {
+position: fixed;
+
+top: -30px;
+
+animation: fall linear forwards;
+
+pointer-events: none;
+
+z-index: 5;
+}
+
+@keyframes fall {
+to {
+transform:
+translateY(112vh)
+rotate(540deg);
+}
+}
