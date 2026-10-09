@@ -26,23 +26,23 @@ overflow-x: hidden;
 /* =========================
 BACKGROUND PHOTO
 ========================= */
-
 .photo {
-position: fixed;
-inset: 0;
-z-index: -2;
+  position: fixed;
+  inset: 0;
+  z-index: -2;
 
-background-image:
-linear-gradient(
-rgba(20, 14, 10, 0.12),
-rgba(20, 14, 10, 0.35)
-),
-url("images/Esq.jpg");
+  background-image:
+    linear-gradient(
+      rgba(20, 14, 10, 0.12),
+      rgba(20, 14, 10, 0.35)
+    ),
+    url("images/Esq.jpg");
 
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
 }
+
 
 /* =========================
 LANDSCAPE / DESKTOP
